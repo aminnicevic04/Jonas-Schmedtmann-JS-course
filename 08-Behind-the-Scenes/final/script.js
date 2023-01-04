@@ -1,7 +1,7 @@
-'use strict';
+// 'use strict';
 
 ///////////////////////////////////////
-// Scoping in Practice
+// Scoping in Practice;
 
 /*
 function calcAge(birthYear) {
@@ -230,4 +230,3 @@ jessicaCopy.family.push('John');
 console.log('Before marriage:', jessica2);
 console.log('After marriage: ', jessicaCopy);
 */
-
