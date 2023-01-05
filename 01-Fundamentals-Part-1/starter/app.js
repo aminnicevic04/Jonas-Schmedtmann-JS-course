@@ -181,4 +181,131 @@ let markBmiTwo = markWeightsTwo / markTallTwo ** 2;
 let johnBmitwo = johnWeightsTwo / johnTallTwo ** 2;
 let markHigherBMITwo = markBmiTwo > johnBmitwo;
 console.log(markBmiTwo, johnBmitwo, markHigherBMITwo);
+
+
+// 8
+
+const firstName = "amin";
+const job = "student";
+const birthYear = 2004;
+const year = 2023;
+
+const amin =
+  "I'm " + firstName + ", a " + (year - birthYear) + " years old " + job + "!";
+console.log(amin);
+
+//template string
+const aminNew = `I'm ${firstName}, a ${year - birthYear} year old ${job} !`;
+console.log(aminNew);
+
+console.log(`just a regular string...`);
+
+//string with a multiple lines
+console.log(
+  "string with \n\
+multiple \n\
+lines"
+);
+
+//another and better way to make a string with multiple lines
+console.log(`string with
+multiple
+lines`);
+
+
+// 9
+
+const age = 15;
+const isOldEnough = age >= 18;
+
+if (isOldEnough) {
+  console.log("Sarah can start driving licens");
+} else {
+  const yearsLeft = 18 - age;
+  console.log(`Sarah is too young. Wait another ${yearsLeft} years.`);
+}
+
+const birthYear = 2004;
+
+let century; //ovako i ostavimo ga kao praznog
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+console.log(century);
+//moramo century izbaciti izvan bloka
+//i tek onda tada ce moci da se prikaze u konzoli
+
+
+// 10
+
+Coding Challenge #2
+Use the BMI example from Challenge #1, and the code you already wrote, and
+improve it.
+Your tasks:
+1. Print a nice output to the console, saying who has the higher BMI. The message
+is either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
+2. Use a template literal to include the BMI values in the outputs. Example: "Mark's
+BMI (28.3) is higher than John's (23.9)!"
+Hint: Use an if/else statement 😉
+GOOD LUCK 😀
+
+
+
+const markWeights = 78;
+const markTall = 1.69;
+
+const johnWeights = 92;
+const johnTall = 1.95;
+
+let markBmi = markWeights / markTall ** 2;
+let johnBmi = johnWeights / johnTall ** 2;
+
+if (markBmi > johnBmi) {
+  console.log(
+    `Mark's BMI ${markBmi.toFixed(2)} is higher than Jon's ${johnBmi.toFixed(
+      2
+    )}`
+  );
+} else {
+  console.log(
+    `John's BMI ${johnBmi.toFixed(2)} is higher than Mark's ${markBmi.toFixed(
+      2
+    )}`
+  );
+}
+
+// 11
+
 */
+
+// Covnersion is when we manually convert from one type to another
+// Coercion is when JavaScript automatically converts types behidn the scenes for us
+//  we can convert to a number, to a string, to a boolien
+
+//type conversion
+const inputYear = "2004";
+console.log(Number(inputYear)); //convert in number
+console.log(Number(inputYear) + 18);
+
+console.log(Number("jonas")); //return NaN
+console.log(typeof NaN);
+
+console.log(String(23), 23); // not gona work
+
+//type coercion
+console.log("i am " + 23 + " yo");
+//here we have a string + number + string = string
+console.log("i am " + "23" + " yo"); //same like above
+console.log("i am " + String(23) + " yo"); //same like above
+
+console.log("23" - "10" + 3); // this time JS convert strings to a numbers
+
+console.log("23" * "2"); // this time JS convert strings to a numbers
+
+console.log("23" / "2"); // this time JS convert strings to a numbers
+
+let n = "1" + 1;
+n = n - 1;
+console.log(n); //return number 10
