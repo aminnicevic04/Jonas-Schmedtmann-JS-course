@@ -471,7 +471,6 @@ if (DolphinsAVG > KoalasAVG && DolphinsAVG >= 100) {
   console.log("NEMA POBEDNIKA");
 }
 
-*/
 
 // 17
 // switch statement
@@ -517,3 +516,88 @@ if (day === "monday") {
 } else {
   console.log("not a valid day");
 }
+
+
+//16
+
+3 + 5;
+2004; //THIS IS EXPRESSION cuz does not produce a value
+true && false && !false; //also expressions
+
+if (23 > 10) {
+  const str = "23 is bigger"; //samo string je expression a cela linija koda je statement
+}
+//statement
+
+const me = "jonas";
+console.log(`i'm ${2037 - 1991} yo ${me}.`);
+
+
+// 17
+//conditional (ternary) operator
+// bukv kao if/else samo u jednoj liniji koda
+
+const age = 23;
+age >= 18
+  ? console.log("i like to drink wine") //ako je true ispisuje se ovo
+  : console.log("i like to drink water"); //ako je false onda ovo
+
+const drink = age >= 18 ? "wine" : "water";
+console.log(drink);
+// ako ima vise od 18 godina pice vino ako ne pice vodu
+
+let drink2;
+if (age >= 18) {
+  drink2 = "wine";
+} else {
+  drink2 = "water";
+}
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
+//ili moze ovako sve u jednoj liniji koda najprostije
+
+
+Coding Challenge #4
+Steven wants to build a very simple tip calculator for whenever he goes eating in a
+restaurant. In his country, it's usual to tip 15% if the bill value is between 50 and
+300. If the value is different, the tip is 20%.
+Your tasks:
+1. Calculate the tip, depending on the bill value. Create a variable called 'tip' for
+this. It's not allowed to use an if/else statement 😅 (If it's easier for you, you can
+start with an if/else statement, and then try to convert it to a ternary
+operator!)
+2. Print a string to the console containing the bill value, the tip, and the final value
+(bill + tip). Example: “The bill was 275, the tip was 41.25, and the total value
+316.25”
+Test data:
+§ Data 1: Test for bill values 275, 40 and 430
+Hints:
+§ To calculate 20% of a value, simply multiply it by 20/100 = 0.2
+§ Value X is between 50 and 300, if it's >= 50 && <= 300 😉
+GOOD LUCK 😀
+*/
+//nacin 1
+// const racun = 100;
+// let tip = racun > 50 && racun < 300 ? racun * 0.15 : racun * 0.2;
+// const ukupno = racun + tip;
+
+//nacin 2
+// if (racun > 50 && racun < 300) {
+//   tip = racun * 0.15;
+// } else if (racun < 50 || racun > 300) {
+//   tip = racun * 0.2;
+// }
+
+// console.log(
+//   `Vas racun je ${racun}, vas tip ako zelite da date iznosi ${tip} sto ukupno kosta ${ukupno}`
+// );
+// console.log(tip);
+
+//nacin 3
+console.log(
+  `Vas racun iznosi ${racun}, vas tip ako zelite da date iznosi ${(tip =
+    racun > 50 && racun < 300
+      ? racun * 0.15
+      : racun * 0.2)} sto ukupno kosta ${ukupno}`
+);
