@@ -595,9 +595,9 @@ GOOD LUCK 😀
 // console.log(tip);
 
 //nacin 3
-console.log(
-  `Vas racun iznosi ${racun}, vas tip ako zelite da date iznosi ${(tip =
-    racun > 50 && racun < 300
-      ? racun * 0.15
-      : racun * 0.2)} sto ukupno kosta ${ukupno}`
-);
+// console.log(
+//   `Vas racun iznosi ${racun}, vas tip ako zelite da date iznosi ${(tip =
+//     racun > 50 && racun < 300
+//       ? racun * 0.15
+//       : racun * 0.2)} sto ukupno kosta ${ukupno}`
+// );
