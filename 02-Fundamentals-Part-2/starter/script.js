@@ -160,9 +160,9 @@ let avgKoalas = calcAvg(Koalas1, Koalas2, Koalas3);
 // console.log(scoreDolphins, scoreKoalas);
 
 const checkWinner = function (avgDolphins, avgKoalas) {
-  if (avgDolphins > avgKoalas * 2) {
+  if (avgDolphins >= avgKoalas * 2) {
     console.log(`Dolphins win (${avgDolphins} vs ${avgKoalas})`);
-  } else if (avgKoalas > avgDolphins * 2) {
+  } else if (avgKoalas >= avgDolphins * 2) {
     console.log(`Koalas win (${avgDolphins} vs ${avgKoalas})`);
   } else {
     console.log(`No winners`);
@@ -172,7 +172,7 @@ const checkWinner = function (avgDolphins, avgKoalas) {
 console.log(checkWinner(avgDolphins, avgKoalas));
 console.log(avgDolphins);
 console.log(avgKoalas);
-*/
+
 //nacin 2
 const calcAverage = (a, b, c) => (a + b + c) / 3;
 console.log(calcAverage(3, 4, 5));
@@ -200,3 +200,4 @@ scoreDolphins = calcAverage(85, 54, 41);
 scoreKoalas = calcAverage(23, 34, 27);
 console.log(scoreDolphins, scoreKoalas);
 checkWinner(scoreDolphins, scoreKoalas);
+*/
