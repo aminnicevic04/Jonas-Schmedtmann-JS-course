@@ -35,6 +35,7 @@ console.log(appleOrangeJuice);
 
 // 3
 //function declaration
+//moze se koristiti pre nego sto je deklar
 function calcAge1(birthYear) {
   const age = 2037 - birthYear;
   return age;
@@ -52,22 +53,22 @@ console.log(age1, age2);
 
 // 4
 
-//Arrow function
+//Arow function
 
 const calcAge3 = (birthYear) => 2037 - birthYear;
 const age3 = calcAge3(1991);
 console.log(age3);
 
-const yearsUntilRetirement = (birthYear, firstNAme) => {
+const yearsUntilretirement = (birthYear, firstNAme) => {
   const age = 2023 - birthYear;
   const retirement = 65 - age;
   //   return retirement;
   return `${firstNAme} retires in ${retirement}`;
 };
 //ovde nam treba return statement dok nam u proslom pirmeru ne treba
-console.log(yearsUntilRetirement(2004, "Amin"));
-console.log(yearsUntilRetirement(1977, "Elvedin"));
-*/
+console.log(yearsUntilretirement(2004, "Amin"));
+console.log(yearsUntilretirement(1977, "Elvedin"));
+
 
 // 5
 
@@ -83,3 +84,27 @@ function fruitProcessor(apples, oranges) {
   return juice;
 }
 console.log(fruitProcessor(2, 3));
+
+
+// 6
+
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const yearsUntilretirement = function (birthYear, firstNAme) {
+  const age = calcAge(birthYear);
+  const retirement = 65 - age;
+
+  if (retirement > 0) {
+    return retirement;
+  } else {
+    console.log(`${firstNAme} has already retired.`);
+    return "already retired"; // return - izlazak iz funkcije
+    //console.log se nece ispisati jer return znaci izlazak iz funkcije
+  }
+};
+
+console.log(yearsUntilretirement(1991, "amin"));
+console.log(yearsUntilretirement(1970, "amin"));
+*/
