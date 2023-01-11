@@ -82,4 +82,4 @@ function fruitProcessor(apples, oranges) {
   const juice = `juice with ${applePieces} apples pieces and ${orangePieces} oranges pieces.`;
   return juice;
 }
-console.log(fruitProcessor(2, 3));
+// console.log(fruitProcessor(2, 3));
