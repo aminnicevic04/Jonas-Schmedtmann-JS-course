@@ -201,3 +201,57 @@ scoreKoalas = calcAverage(23, 34, 27);
 console.log(scoreDolphins, scoreKoalas);
 checkWinner(scoreDolphins, scoreKoalas);
 */
+
+// 8
+const friend1 = "dzeis";
+const friend2 = "hasi";
+const friend3 = "tarik";
+
+const friends = ["dzeis", "hasi", "tarik"];
+console.log(friends);
+
+const yearss = new Array(1991, 1992, 1993);
+
+console.log(friends[0]);
+console.log(friends[3]);
+
+console.log(friends.length); //vraca 3
+console.log(friends[friends.length - 1]); //vraca tarik tj poslednjeg iz niza 3 - 1 = 2
+
+friends[2] = "cinda";
+console.log(friends);
+
+// mozemo array da menjamo uvek iako mu na pocetku dodamo const
+
+// friends = ["ciki", "miki"]; //ovo ne moze
+
+const firstName = "jonas";
+const amin = [firstName, "nicevic", 2023 - 2004, "student", friends];
+console.log(amin);
+//mozemo da dodajemo u nase nizove ovako
+console.log(amin.length);
+
+//vezba 1
+
+const calcAge = function (birthYear) {
+  return 2023 - birthYear;
+};
+
+const years = [1990, 1999, 2000, 2003, 2004];
+console.log(calcAge(years));
+// vraca NaN
+// jer oduzima broj sa nizom
+// npr da stavimo years + 10 racunalo bi 200410
+// a tipa da stavimo years - 10 vracalo bi NaN
+
+const age1 = calcAge(years[0]); //mpr ovo moze
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]); //nalazenje poslednjeg
+console.log(age1, age2, age3);
+
+const ages = [
+  calcAge(years[0]),
+  calcAge(years[1]),
+  calcAge(years[years.length - 1]),
+];
+console.log(ages);
