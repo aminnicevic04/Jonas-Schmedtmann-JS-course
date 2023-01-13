@@ -242,7 +242,7 @@ console.log(calcAge(years));
 // vraca NaN
 // jer oduzima broj sa nizom
 // npr da stavimo years + 10 racunalo bi 200410
-// a tipa da stavimo years - 10 vracalo bi NaN
+// a t7888888\a90000000000000000000000000000000000000SDDDDDDDDDDDDipa da stavimo years - 10 vracalo bi NaN
 
 const age1 = calcAge(years[0]); //mpr ovo moze
 const age2 = calcAge(years[1]);
