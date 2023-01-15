@@ -322,4 +322,3 @@ actually be the returned value of a function! So you can just call a function as
 values (so don't store the tip values in separate variables first, but right in the new
 array) 😉
 GOOD LUCK 😀
-*/
