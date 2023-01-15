@@ -200,7 +200,7 @@ scoreDolphins = calcAverage(85, 54, 41);
 scoreKoalas = calcAverage(23, 34, 27);
 console.log(scoreDolphins, scoreKoalas);
 checkWinner(scoreDolphins, scoreKoalas);
-*/
+
 
 // 8
 const friend1 = "dzeis";
@@ -255,3 +255,49 @@ const ages = [
   calcAge(years[years.length - 1]),
 ];
 console.log(ages);
+
+
+// 9
+const friends = ["dzeis", "hasi", "tarik"];
+
+// add elements
+friends.push("anel");
+console.log(friends);
+
+const newLenght = friends.push("anel");
+//vraca koliko elemenata imamo u nizu
+console.log(newLenght);
+// vraca 5 jer smo dva puta dodali anel
+
+friends.unshift("murga");
+console.log(friends);
+
+// remove elements
+
+friends.pop();
+console.log(friends);
+// ako zelimo poslednja dva da maknemo samo dva puta upotrebimo ovu metodu
+
+const popped = friends.pop();
+console.log(popped);
+//vraca element koji smo izbacili
+
+friends.shift();
+console.log(friends);
+
+console.log(friends.indexOf("hasi"));
+//ova metoda govori nam na kojoj poziciji se nalazi trazeni element
+
+console.log(friends.includes("hasi"));
+console.log(friends.includes("anel"));
+//pokazuje nam sa true and false da li se dati element nalazi u nasem nizu
+friends.push(23);
+console.log(friends.includes("23")); //vraca false
+
+if (friends.includes("hasi")) {
+  //ako je ovo tacno ispisace se u konzoli sta zadamo naravno
+  console.log("u have a friends called hasi");
+}
+
+console.log(friends);
+*/
