@@ -335,5 +335,46 @@ console.log(bills, tips, total);
 
 */
 
-// 11
+// 11 objects
+const jonasArray = [
+  "jonas",
+  "schmedtman",
+  2037 - 1991,
+  "teacher",
+  ["michael", "peter"],
+];
 
+const jonas = {
+  firstName: "jonas",
+  lastName: "schemdtman",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["michael", "peter"],
+};
+
+console.log(jonas);
+console.log(jonas.lastName);
+console.log(jonas["lastName"]);
+
+const nameKey = "Name";
+console.log(jonas["first" + nameKey]);
+console.log(jonas["last" + nameKey]);
+
+const interestedIn = prompt("what do u want to know about Jonas?");
+
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]);
+} else {
+  console.log("dont have info for that");
+}
+
+jonas.location = "portugal";
+jonas["twiter"] = "@jonassss";
+console.log(jonas);
+
+//challenge
+//"jonas has 3 friends, and his bestfriend is called michael"
+
+console.log(
+  `${jonas.firstName} has ${jonas.friends.length} friends, and his best friends called ${jonas.friends[0]}`
+);
