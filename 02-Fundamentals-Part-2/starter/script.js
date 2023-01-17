@@ -333,7 +333,7 @@ const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 const total = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + bills[2]];
 console.log(bills, tips, total);
 
-*/
+
 
 // 11 objects
 const jonasArray = [
@@ -378,3 +378,4 @@ console.log(jonas);
 console.log(
   `${jonas.firstName} has ${jonas.friends.length} friends, and his best friends called ${jonas.friends[0]}`
 );
+*/
