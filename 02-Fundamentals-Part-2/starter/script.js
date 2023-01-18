@@ -482,7 +482,7 @@ if (john.calcBmi() > marks.calcBmi()) {
 for (let rep = 1; rep <= 10; rep++) {
   console.log(`lifting weights repetition ${rep}`);
 }
-*/
+
 
 //14
 
@@ -526,3 +526,6 @@ for (let i = 0; i < jonasArray.length; i++) {
 
   console.log(jonasArray[i], typeof jonasArray[i]);
 }
+*/
+
+//15
