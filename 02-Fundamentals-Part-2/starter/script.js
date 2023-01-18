@@ -484,3 +484,15 @@ for (let rep = 1; rep <= 10; rep++) {
 }
 
 //14
+
+const jonasArray = [
+  "jonas",
+  "schmedtman",
+  2037 - 1991,
+  "teacher",
+  ["michael", "peter"],
+];
+
+for (let i = 0; ; i++) {
+  console.log(jonas[i]);
+}
