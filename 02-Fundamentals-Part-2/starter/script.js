@@ -627,6 +627,5 @@ const calcAvg = function (arr) {
   return sum / arr.length;
 };
 
-console.log(calcAvg([2, 3, 7]));
 console.log(calcAvg(total));
 console.log(calcAvg(tip));
