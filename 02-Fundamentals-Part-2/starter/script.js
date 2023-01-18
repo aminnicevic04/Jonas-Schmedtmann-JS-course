@@ -475,13 +475,14 @@ if (john.calcBmi() > marks.calcBmi()) {
     } (${john.calcBmi()}) `
   );
 }
-*/
+
 
 //13 loop
 
 for (let rep = 1; rep <= 10; rep++) {
   console.log(`lifting weights repetition ${rep}`);
 }
+*/
 
 //14
 
@@ -493,6 +494,6 @@ const jonasArray = [
   ["michael", "peter"],
 ];
 
-for (let i = 0; ; i++) {
-  console.log(jonas[i]);
+for (let i = 0; i <= jonasArray.length; i++) {
+  console.log(jonasArray[i]);
 }
