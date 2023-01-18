@@ -378,4 +378,109 @@ console.log(jonas);
 console.log(
   `${jonas.firstName} has ${jonas.friends.length} friends, and his best friends called ${jonas.friends[0]}`
 );
+
+
+//12
+const jonas = {
+  firstName: "jonas",
+  lastName: "schemdtman",
+  birthYear: 1991,
+  job: "teacher",
+  friends: ["michael", "peter"],
+  hasDriverLicense: true,
+
+  // calcAge: function (birthYear) {
+  //   return 2037 - birthYear;
+  // }
+
+  // calcAge: function () {
+  //   return 2037 - this.birthYear; //this prestavlja ceo jonas object
+  // }
+
+  calcAge: function () {
+    this.age = 2037 - this.birthYear;
+    return this.age;
+  },
+
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()}-year old ${
+      this.job
+    }, and he has ${cthis.hasDriverLicense ? "a" : "no"} driver license `;
+  },
+};
+//ispisivanje fu-je u objectu
+
+console.log(jonas.calcAge());
+//e sada ne moramo da pisemo birthyear vrednost kada pozivamo funkciju
+
+// console.log(jonas["calcAge"](1991));
+//na oba nacina
+
+//challenge
+//ubacio sam funkciju gore u kodu a ovde cu samo da je pozovem
+//morao sam da koristim turnari operator
+
+console.log(jonas.getSummary());
+
+Coding Challenge #3
+Let's go back to Mark and John comparing their BMIs! This time, let's use objects to
+implement the calculations! Remember: BMI = mass / height ** 2 = mass
+/ (height * height) (mass in kg and height in meter)
+Your tasks:
+1. For each of them, create an object with properties for their full name, mass, and
+height (Mark Miller and John Smith)
+2. Create a 'calcBMI' method on each object to calculate the BMI (the same
+method on both objects). Store the BMI value to a property, and also return it
+from the method
+3. Log to the console who has the higher BMI, together with the full name and the
+respective BMI. Example: "John's BMI (28.3) is higher than Mark's (23.9)!"
+Test data: Marks weights 78 kg and is 1.69 m tall. John weights 92 kg and is 1.95 m
+tall.
+GOOD LUCK 😀
+
+
+const marks = {
+  firstName: "Mark",
+  lastName: "Miller",
+  fullName: this.firstName + this.lastName,
+  weight: 78,
+  height: 1.69,
+
+  calcBmi: function () {
+    return this.weight / this.height ** 2;
+  },
+};
+const john = {
+  firstName: "John",
+  lastName: "Smith",
+  fullName: this.firstName + this.lastName,
+  weight: 92,
+  height: 1.95,
+
+  calcBmi: function () {
+    return this.weight / this.height ** 2;
+  },
+};
+
+if (john.calcBmi() > marks.calcBmi()) {
+  console.log(
+    `${john.firstName} BMI (${john.calcBmi()}) is higher than ${
+      marks.firstName
+    } (${marks.calcBmi()})`
+  );
+} else {
+  console.log(
+    `${marks.firstName} BMI (${marks.calcBmi()}) is higher than ${
+      john.firstName
+    } (${john.calcBmi()}) `
+  );
+}
 */
+
+//13 loop
+
+for (let rep = 1; rep <= 10; rep++) {
+  console.log(`lifting weights repetition ${rep}`);
+}
+
+//14
