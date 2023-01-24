@@ -15,7 +15,7 @@ body {
   font-family: 'Press Start 2P', sans-serif;
   color: blue;
   background-color: white;
-  /* background-color: #60b347; */
+  /* background-color: #14c91a; */
 }
 
 /* LAYOUT */
@@ -58,7 +58,7 @@ h1 {
 
 .number {
   background: blue;
-  color: #eee;
+  color: white;
   font-size: 6rem;
   width: 15rem;
   padding: 3rem 0rem;
@@ -98,7 +98,7 @@ h1 {
 .btn {
   border: none;
   background-color:blue;
-  color: #eee;
+  color: white;
   font-size: 2rem;
   font-family: inherit;
   padding: 2rem 3rem;
