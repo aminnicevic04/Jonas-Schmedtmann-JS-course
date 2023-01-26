@@ -21,6 +21,7 @@ const x = function () {
 
 const secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 5;
+let highScore = 0;
 
 document.querySelector('.number').textContent = '?';
 
@@ -39,6 +40,11 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('body').style.backgroundColor = '#14c91a';
     document.querySelector('.number').style.width = '30rem';
     document.querySelector('.number').textContent = secretNumber;
+
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector('.highscore').textContent = highScore;
+    }
 
     //when guess is too high
   } else if (guess > secretNumber) {
@@ -112,7 +118,7 @@ Your tasks:
 fields
 4. Also restore the original background color (#222) and number width (15rem)
 GOOD LUCK 😀
-*/
+
 // again button
 
 const messageOne = document.querySelector('.message').textContent;
@@ -147,3 +153,6 @@ document.querySelector('.again').addEventListener('click', function () {
   score = 5;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
 });
+*/
+
+//project Modal Window
