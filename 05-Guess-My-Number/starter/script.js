@@ -118,6 +118,7 @@ Your tasks:
 fields
 4. Also restore the original background color (#222) and number width (15rem)
 GOOD LUCK 😀
+*/
 
 // again button
 
@@ -153,6 +154,5 @@ document.querySelector('.again').addEventListener('click', function () {
   score = 5;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
 });
-*/
 
 //project Modal Window
