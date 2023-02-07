@@ -36,3 +36,48 @@ calcAge(2004); // bez pozivanja ove funkcije ne bi nam se ispisalo u konzoli fir
 // ali ne moramo je nigde prikazati
 // console.log(age);
 // printAge();
+
+// HOISTING and TDZ(temporal dead zone)
+
+//variables
+console.log(me);
+// console.log(job);
+// console.log(year);
+
+var me = 'jonas';
+let job = 'teacher';
+const year = 1991;
+
+//functions
+
+console.log(addDecl(2, 3)); //declaration function moze ovo da radi
+// console.log(addExpr(2, 3)); //expresion function ne moze displeya error zato sto ima const
+// console.log(addArrow(2, 3)); //isto se desava i sa arrow funkcijom
+
+function addDecl(a, b) {
+  return a + b;
+}
+const addExpr = function (a, b) {
+  return a + b;
+};
+
+const addArrow = (a, b) => a + b;
+
+// example
+
+if (!numProducts) deleteShoppingCart();
+//znaci ako numproduct nije 10 obrisi sve tj u svakom slucaju brisi
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+  console.log('all products deleted!');
+}
+
+var x = 1;
+let y = 2;
+const z = 3;
+// na window objectu mozemo videti samo varijablu oznacu sa var
+console.log(x === window.x); // return true
+console.log(x === window.y); // return false
+console.log(x === window.z); // return false
