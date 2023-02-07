@@ -1,61 +1,38 @@
 'use strict';
-// 1 destructuring arrays
 
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+function calcAge(birthYear) {
+  const age = 2023 - birthYear;
+  console.log(firstName);
 
-  order: function (starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-    // pravimo da koristnik unosenjem bira sta ce iz dela starter menu i main menu
-  },
-};
+  function printAge() {
+    let output = `${firstName} are ${age}, born in ${birthYear}`;
+    console.log(output);
 
-const arr = [2, 3, 4];
-const a = arr[0];
-const b = arr[1];
-const c = arr[2];
-// da ne bi pisali ovo
-//mozemo sledece =>>
-const [x, y, z] = arr;
-console.log(x, y, z); //vraca samo elemente 2 3 4
-console.log(arr); // vraca niz (3) [2,3,4]
+    if (birthYear >= 1991 && birthYear <= 2004) {
+      var milenial = true;
+      //ressigning output
+      const output = 'new output';
+      const firstName = 'Steven';
+      const str = `oh, and u are milenial ${firstName}`;
+      console.log(str);
 
-// const [first, second] = restaurant.categories;
-// console.log(first, second); // vraca italian pizzeria prva dve el
+      function add(a, b) {
+        return a + b;
+      }
+    }
+    console.log(milenial); // pronalazi ga jer je var block scoped
+    // console.log(str);// ne moze jer su let i const block scoped
+    // add(2, 3); // add is not defined
+    // console.log(add(2, 3)); // add is not defined
+    console.log(output); //ispisuje novi output, kada je const to ne radi vec ispisuje stari
+  }
+  printAge();
 
-const [first, , second] = restaurant.categories;
-console.log(first, second); // vraca italian vegetarian vraca prvi i treci el preskace drugi zbg zareza
+  return age;
+}
 
-let [main, , secondary] = restaurant.categories;
-console.log(main, secondary);
-
-// const temp = main;
-// main = secondary;
-// secondary = temp;
-// console.log(main, secondary);
-//menjamo main i secondary tj. italian i vegetarian
-
-[main, secondary] = [secondary, main];
-// we reasigning a values
-console.log(main, secondary);
-
-const [starter, mainCourse] = restaurant.order(2, 0);
-console.log(starter, mainCourse);
-
-const nested = [2, 4, [5, 6]]; // arr i  arr
-// const [i, , j] = nested;
-// console.log(i, j); // vraca 5,6 samo ovaj drugi arr koji je unutar njega
-const [i, , [j, k]] = nested;
-console.log(i, j, k); //vraca 2,5,6
-
-//
-// const [p, q, r] = [8, 6];
-// console.log(p, q, r); // vraca 8 6 undefined
-
-const [p = 1, q = 1, r = 1] = [8, 6];
-console.log(p, q, r); // vraca 8 1 1
-// zbog toga sto
+const firstName = 'amin';
+calcAge(2004); // bez pozivanja ove funkcije ne bi nam se ispisalo u konzoli firstName
+// ali ne moramo je nigde prikazati
+// console.log(age);
+// printAge();
