@@ -105,7 +105,7 @@ const calcAge = function (birthYear) {
 calcAge(2004); //ovde je undefined
 const calcAgeArrow = birthYear => {
   console.log(2023 - birthYear);
-  console.log(this);
+  console.log(this); //this is window bcs window is the disc keyword in global scope
 };
 calcAgeArrow(2004); //ovde je window{}
 // because the arrow function does not get its own disc keyword
@@ -114,3 +114,23 @@ calcAgeArrow(2004); //ovde je window{}
 
 // jer funkcija strelice ne dobiva svoj disc keyword ona koritsti lexical keyword,
 // što znači da koristi disc keyword svoje parent funkcije ili njegovog matičnog scopa
+
+const amci = {
+  year: 2004,
+  calcAge: function () {
+    console.log(this);
+    console.log(2023 - this.year);
+  },
+};
+amci.calcAge();
+
+const matilda = {
+  year: 2017,
+};
+matilda.calcAge = amci.calcAge; //METHOD BORROWING
+// mi smo ovde kopirali iz jednog objekta u drugi i ovo se zove method Borrowind
+matilda.calcAge(); // 6 jer radi istu onu funkciju odozgo tj metodu
+
+const f = amci.calcAge;
+f();
+// prikazuje gresku zbg toga sto nije zakacena ni na jedan objekat
