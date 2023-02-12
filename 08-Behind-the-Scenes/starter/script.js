@@ -1,4 +1,9 @@
 'use strict';
+/*
+// Execution contest
+//1) variable enviroment
+//2) scope chain
+//3) this keyword
 
 function calcAge(birthYear) {
   const age = 2023 - birthYear;
@@ -81,3 +86,31 @@ const z = 3;
 console.log(x === window.x); // return true
 console.log(x === window.y); // return false
 console.log(x === window.z); // return false
+*/
+// This keywords
+//is special variable that is created for every execution context(every function).
+//Takes the values of(points to) the "owner" of the function in which the this keyword is used
+
+// not static.
+
+//Posebna varijabla koja se kreira za svaki kontekst izvršavanja (svaku funkciju).
+//Uzima vrijednost (pokazuje na) 'vlasnika' funkcije u kojoj se koristi ova ključna riječ
+
+console.log(this);
+
+const calcAge = function (birthYear) {
+  console.log(2023 - birthYear);
+  console.log(this);
+};
+calcAge(2004); //ovde je undefined
+const calcAgeArrow = birthYear => {
+  console.log(2023 - birthYear);
+  console.log(this);
+};
+calcAgeArrow(2004); //ovde je window{}
+// because the arrow function does not get its own disc keyword
+// ona koritsti lexical keyword, which means that it uses the disc keyword of his parent
+// function or of his parent scope
+
+// jer funkcija strelice ne dobiva svoj disc keyword ona koritsti lexical keyword,
+// što znači da koristi disc keyword svoje parent funkcije ili njegovog matičnog scopa
