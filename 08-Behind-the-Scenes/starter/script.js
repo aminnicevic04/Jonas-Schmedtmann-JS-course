@@ -86,7 +86,7 @@ const z = 3;
 console.log(x === window.x); // return true
 console.log(x === window.y); // return false
 console.log(x === window.z); // return false
-*/
+
 // This keywords
 //is special variable that is created for every execution context(every function).
 //Takes the values of(points to) the "owner" of the function in which the this keyword is used
@@ -131,6 +131,105 @@ matilda.calcAge = amci.calcAge; //METHOD BORROWING
 // mi smo ovde kopirali iz jednog objekta u drugi i ovo se zove method Borrowind
 matilda.calcAge(); // 6 jer radi istu onu funkciju odozgo tj metodu
 
-const f = amci.calcAge;
-f();
+// const f = amci.calcAge;
+// f();
 // prikazuje gresku zbg toga sto nije zakacena ni na jedan objekat
+
+// regular function vs arrow function
+
+var firstName = 'matilda';
+//e kad je ovako prikazuje hey matilda zbg toga sto odma ide na global scope
+
+const jonas = {
+  firstName: 'jonas',
+  year: 2004,
+  calcAge: function () {
+    console.log(this);
+    console.log(2023 - this.year);
+
+    //solution 1
+
+    // const self = this;
+    // const isMillenial = function () {
+    //   console.log(this);
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    //   // console.log(this.year >= 1981 && this.year <= 1996);
+    // };
+    // isMillenial();
+
+    //solution 2
+
+    const isMillenial = () => {
+      console.log(this);
+      console.log(self.year >= 1981 && self.year <= 1996);
+    };
+    isMillenial();
+  },
+
+  great: () => console.log(`hey ${this.firstName}`),
+};
+jonas.great();
+//greska zbg toga sto je arrow function nema svoj keyword
+//i uzima parent scope a parent scope ovog objekta je global scope
+
+//Arguments keywords
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 5, 6, 5, 4);
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+
+
+// ===
+
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age); //31
+console.log(oldAge); //30
+
+const me = {
+  name: 'Jonas',
+  age: 30,
+};
+const friend = me;
+friend.age = 27;
+console.log('friend:', friend); //27
+console.log('me', me); //27
+*/
+
+let lastName = 'wiliams';
+let oldLastName = lastName;
+lastName = 'davis';
+console.log(lastName, oldLastName);
+
+const jesica = {
+  firstName: 'jesica',
+  lastName: 'wiliams',
+  age: 23,
+};
+const marriedJessica = jesica;
+marriedJessica.lastName = 'davis';
+console.log('before marriage:', jesica);
+console.log('after marriage:', marriedJessica);
+
+const jesica2 = {
+  firstName: 'jesica',
+  lastName: 'wiliams',
+  age: 23,
+  family: ['alice', 'bob'],
+};
+
+const jesicaCopy = Object.assign({}, jesica2);
+jesicaCopy.lastName = 'davis';
+
+jesicaCopy.family.push('mary');
+jesicaCopy.family.push('john');
+
+console.log('before marriage:', jesica2);
+console.log('after marriage:', jesicaCopy);
