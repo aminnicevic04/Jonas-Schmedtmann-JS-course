@@ -52,15 +52,15 @@ const nested = [2, 4, [5, 6]]; // arr i  arr
 const [i, , [j, k]] = nested;
 console.log(i, j, k); //vraca 2,5,6
 
-//
 // const [p, q, r] = [8, 6];
 // console.log(p, q, r); // vraca 8 6 undefined
 
 const [p = 1, q = 1, r = 1] = [8, 6];
 console.log(p, q, r); // vraca 8 1 1
-*/
 
-// 2 DESTRUCTURING OBJECTS pocetak
+
+// 2 DESTRUCTURING OBJECTS
+// razlazemo ih pomocu {}
 
 const restaurant = {
   name: 'Classico Italiano',
@@ -87,6 +87,65 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `order reicever ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} 
+      will be delivered to ${address} at ${time}.`
+    ); // znaci mi smo ga dole razlagali da bi ovde mogli da ga iskoristimo
+  },
 };
 
+restaurant.orderDelivery({
+  time: '23:30',
+  address: 'via del sole, 21',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+restaurant.orderDelivery({
+  address: 'via del sole, 21',
+  starterIndex: 1,
+});
+
 const { name, openingHours, categories } = restaurant;
+console.log(name, openingHours, categories);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(name, hours, tags);
+
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// Mutating variables
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+
+({ a, b } = obj);
+// ovako to radimo kada imamo let kao sto je u primeru let a = 111;
+// ne mozemo staviti const, a ni let, vec stavljamo samo zagrade.
+console.log(a, b);
+
+//nested objects
+
+const {
+  sat: { open, close },
+} = openingHours;
+console.log(open, close); // vraca 0 24 kao numbers
+const {
+  sat: { open: o, close: c },
+} = openingHours;
+console.log(o, c); // opet isto vraca kao i gore 0 24
+*/
+
+// THE SPREAD OPERATOR (...)
