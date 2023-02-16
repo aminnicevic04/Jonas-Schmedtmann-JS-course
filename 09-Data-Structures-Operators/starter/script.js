@@ -148,4 +148,4 @@ const {
 console.log(o, c); // opet isto vraca kao i gore 0 24
 */
 
-THE SPREAD OPERATOR (...)
+// THE SPREAD OPERATOR (...)
