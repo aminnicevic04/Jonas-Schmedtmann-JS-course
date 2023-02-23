@@ -557,6 +557,6 @@ const printGoals = function (...players) {
 printGoals(...game.scored); //da ne bi dobijali array(4) koristimo spread operator
 //7
 team1 < team2 && console.log(`team1 ima vece sanse da pobedi`);
-// team1 > team2 && console.log(`team2 ima vece sanse da pobedi`);
+team1 > team2 && console.log(`team2 ima vece sanse da pobedi`);
 // koristimo vaoj operator zato sto on nastavlja operaciju
 // kada je prva vrednost true
