@@ -560,3 +560,78 @@ team1 < team2 && console.log(`team1 ima vece sanse da pobedi`);
 team1 > team2 && console.log(`team2 ima vece sanse da pobedi`);
 // koristimo vaoj operator zato sto on nastavlja operaciju
 // kada je prva vrednost true
+
+//FOR OF loop
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  // ES6 enchanced object literals
+  openingHours,
+
+  //objest in objest btw
+
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+    console.log(
+      `order reicever ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} 
+      will be delivered to ${address} at ${time}.`
+    );
+  },
+
+  orderPasta(ing1, ing2, ing3) {
+    console.log(`here is ur delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
+
+  orderPizza(mainIngridient, ...otherIngridietns) {
+    console.log(mainIngridient);
+    console.log(otherIngridietns);
+  },
+};
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) console.log(item);
+
+for (const item of menu.entries()) {
+  console.log(item);
+}
+// entries predstavlja metodu koja prebacuje u arr i dodaje index
+
+// console.log([...menu.entries()]);
+// sada nam je vratio array arraya u kojem se nalaze menu stavke sa njihovim indexom
+
+// e sad kada bi zeleli da  napravimo listu itema u restoranu naravno necemo od nula da
+// tkd sada pisemo sledeci kod
+
+for (const item of menu.entries()) {
+  console.log(`${item[0] + 1}: ${item[1]}`);
+}
+console.log(`---------------------------------------`);
+//postoji i bolji nacin
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// enchanced object literals
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [`day-${2 + 4}`]: {
+    open: 0, //open 24hours
+    close: 24,
+  },
+};
