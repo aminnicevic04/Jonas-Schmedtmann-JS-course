@@ -488,6 +488,264 @@ Test data for 6.: First, use players 'Davies', 'Muller', 'Lewandowski' and 'Kimm
 Then, call the function again with players from game.scored
 GOOD LUCK 😀
 */
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
+
+// //1
+// const players1 = [...game.players[0]];
+// const players2 = [...game.players[1]];
+// console.log(players1, players2);
+// //2
+// const [gk, ...fieldPlayers] = players1;
+// console.log(gk, fieldPlayers);
+// //3
+// const allPlayers = [...players1, ...players2];
+// console.log(allPlayers);
+// //4
+// const players1Final = [...players1, 'thiago', 'perisic', 'coutinho'];
+// console.log(players1Final);
+// //5
+// const {
+//   odds: { team1, x: draw, team2 },
+// } = game;
+// console.log(team1, draw, team2);
+// //6
+// const printGoals = function (...players) {
+//   console.log(players);
+//   console.log(`Na utakmici je postignuto ${players.length} golova`);
+// };
+// // printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+// // printGoals('Davies', 'Muller');
+// printGoals(...game.scored); //da ne bi dobijali array(4) koristimo spread operator
+// //7
+// team1 < team2 && console.log(`team1 ima vece sanse da pobedi`);
+// team1 > team2 && console.log(`team2 ima vece sanse da pobedi`);
+// koristimo vaoj operator zato sto on nastavlja operaciju
+// kada je prva vrednost true
+
+//FOR OF loop
+// const restaurant = {
+//   name: 'Classico Italiano',
+//   location: 'Via Angelo Tavanti 23, Firenze, Italy',
+//   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+//   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic bread', 'Caprese Salad'],
+//   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+//   openingHours,
+//   // ES6 enchanced object literals
+
+//   //objest in objest btw
+
+//   order(starterIndex, mainIndex) {
+//     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+//   },
+
+//   orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
+//     console.log(
+//       `order reicever ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]}
+//       will be delivered to ${address} at ${time}.`
+//     );
+//   },
+
+//   orderPasta(ing1, ing2, ing3) {
+//     console.log(`here is ur delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+//   },
+
+//   orderPizza(mainIngridient, ...otherIngridietns) {
+//     console.log(mainIngridient);
+//     console.log(otherIngridietns);
+//   },
+// };
+
+// const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// for (const item of menu) console.log(item);
+
+// for (const item of menu.entries()) {
+//   console.log(item);
+// }
+// entries predstavlja metodu koja prebacuje u arr i dodaje index
+
+// console.log([...menu.entries()]);
+// sada nam je vratio array arraya u kojem se nalaze menu stavke sa njihovim indexom
+
+// e sad kada bi zeleli da  napravimo listu itema u restoranu naravno necemo od nula da
+// tkd sada pisemo sledeci kod
+
+// for (const item of menu.entries()) {
+//   console.log(`${item[0] + 1}: ${item[1]}`);
+// }
+// console.log(`---------------------------------------`);
+// //postoji i bolji nacin
+// for (const [i, el] of menu.entries()) {
+//   console.log(`${i + 1}: ${el}`);
+// }
+
+// enchanced object literals
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [`day-${2 + 4}`]: {
+    open: 0, //open 24hours
+    close: 24,
+  },
+};
+
+// if (restaurant.openingHours && restaurant.openingHours.mon)
+//   console.log(restaurant.openingHours.mon.open);
+
+// // With optional chaining
+// console.log(restaurant.openingHours.mon?.open);
+//ovo je optional chaning on se ovako radi
+// znaci ako je prvi uslov ispunjem on ce posle tek da odradi .open
+// tj. ako ovo pre optaonal chaininga postoji on ce izvrsiti posle njega to
+// tj. ne sme da je undefined and null
+
+// console.log('--------------------NOVA LEKCIJA--------------------');
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, //open 24hours
+      close: 24,
+    },
+  }, //objest in objest btw
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 0,
+    time = '20:00',
+    address,
+  }) {
+    console.log(
+      `order reicever ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]}
+      will be delivered to ${address} at ${time}.`
+    );
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`here is ur delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
+
+  orderPizza: function (mainIngridient, ...otherIngridietns) {
+    console.log(mainIngridient);
+    console.log(otherIngridietns);
+  },
+};
+
+// const properties = Object.keys(openingHours);
+// console.log(properties);
+
+// let openStr = `we are open on ${properties.length}days`;
+
+// for (const day of Object.keys(openingHours)) {
+//   openStr += `${day}`;
+// }
+
+// console.log(openStr);
+
+// //property values
+// const values = Object.values(openingHours);
+// console.log(values);
+
+// // Entire object
+
+// const entries = Object.entries(openingHours);
+// console.log(entries);
+
+// // [key, value]
+// for (const [key, { open, close }] of entries) {
+//   console.log(`on ${key} we open at ${open} and close at ${close}`);
+// }
+/*
+Coding Challenge #2
+Let's continue with our football betting app! Keep using the 'game' variable from 
+before.
+Your tasks:
+1. Loop over the game.scored array and print each player name to the console, 
+along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already 
+studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exactly like this:
+Odd of victory Bayern Munich: 1.33
+Odd of draw: 3.25
+Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them 
+(except for "draw"). Hint: Note how the odds and the game objects have the 
+same property names �
+4. Bonus: Create an object called 'scorers' which contains the names of the 
+players who scored as properties, and the number of goals as the value. In this 
+game, it will look like this:
+{
+ Gnarby: 1,
+ Hummels: 1,
+ Lewandowski: 2
+}
+GOOD LUCK �
+
+
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -528,110 +786,59 @@ const game = {
     team2: 6.5,
   },
 };
-
 //1
-const players1 = [...game.players[0]];
-const players2 = [...game.players[1]];
-console.log(players1, players2);
+for (const [i, player] of game.scored.entries()) {
+  console.log(`goal ${i + 1} ${player}`);
+}
 //2
-const [gk, ...fieldPlayers] = players1;
-console.log(gk, fieldPlayers);
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) average += odd;
+average /= odds.length;
+console.log(average);
 //3
-const allPlayers = [...players1, ...players2];
-console.log(allPlayers);
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
 //4
-const players1Final = [...players1, 'thiago', 'perisic', 'coutinho'];
-console.log(players1Final);
-//5
-const {
-  odds: { team1, x: draw, team2 },
-} = game;
-console.log(team1, draw, team2);
-//6
-const printGoals = function (...players) {
-  console.log(players);
-  console.log(`Na utakmici je postignuto ${players.length} golova`);
-};
-// printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
-// printGoals('Davies', 'Muller');
-printGoals(...game.scored); //da ne bi dobijali array(4) koristimo spread operator
-//7
-team1 < team2 && console.log(`team1 ima vece sanse da pobedi`);
-team1 > team2 && console.log(`team2 ima vece sanse da pobedi`);
-// koristimo vaoj operator zato sto on nastavlja operaciju
-// kada je prva vrednost true
-
-//FOR OF loop
-const restaurant = {
-  name: 'Classico Italiano',
-  location: 'Via Angelo Tavanti 23, Firenze, Italy',
-  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
-  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic bread', 'Caprese Salad'],
-  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-
-  // ES6 enchanced object literals
-  openingHours,
-
-  //objest in objest btw
-
-  order(starterIndex, mainIndex) {
-    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
-  },
-
-  orderDelivery({ starterIndex = 1, mainIndex = 0, time = '20:00', address }) {
-    console.log(
-      `order reicever ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} 
-      will be delivered to ${address} at ${time}.`
-    );
-  },
-
-  orderPasta(ing1, ing2, ing3) {
-    console.log(`here is ur delicious pasta with ${ing1}, ${ing2}, ${ing3}`);
-  },
-
-  orderPizza(mainIngridient, ...otherIngridietns) {
-    console.log(mainIngridient);
-    console.log(otherIngridietns);
-  },
-};
-
-const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-
-for (const item of menu) console.log(item);
-
-for (const item of menu.entries()) {
-  console.log(item);
+// BONUS
+// So the solution is to loop over the array, and add the array elements as object properties, and then increase the count as we encounter a new occurence of a certain element
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
 }
-// entries predstavlja metodu koja prebacuje u arr i dodaje index
+*/
 
-// console.log([...menu.entries()]);
-// sada nam je vratio array arraya u kojem se nalaze menu stavke sa njihovim indexom
+const rest = new Map();
+rest.set('name', 'clasico Italiano');
+rest.set(1, 'Firenze, Italy');
+rest.set(2, 'Listabon, Portugal');
+console.log(rest.set(2, 'Listabon, Portugal'));
 
-// e sad kada bi zeleli da  napravimo listu itema u restoranu naravno necemo od nula da
-// tkd sada pisemo sledeci kod
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'we are open')
+  .set(false, 'we are closed');
 
-for (const item of menu.entries()) {
-  console.log(`${item[0] + 1}: ${item[1]}`);
-}
-console.log(`---------------------------------------`);
-//postoji i bolji nacin
-for (const [i, el] of menu.entries()) {
-  console.log(`${i + 1}: ${el}`);
-}
+console.log(rest.get('name'));
+console.log(rest.get(true));
+console.log(rest.get(1));
 
-// enchanced object literals
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
-const openingHours = {
-  [weekdays[3]]: {
-    open: 12,
-    close: 22,
-  },
-  [weekdays[4]]: {
-    open: 11,
-    close: 23,
-  },
-  [`day-${2 + 4}`]: {
-    open: 0, //open 24hours
-    close: 24,
-  },
-};
+const time = 21;
+rest.get(time > rest.get('open') && time < rest.get('close'));
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+
+console.log(rest.has('categories'));
+rest.delete(2);
+// rest.clear()
+
+const arr = [1, 2];
+rest.set(arr, 'test');
+rest.set([document.querySelector('h1'), 'Heading']);
+rest.delete(rest);
+rest.delete(rest.size);
+
+console.log(rest.get(arr));
