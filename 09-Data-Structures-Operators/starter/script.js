@@ -842,3 +842,5 @@ rest.delete(rest);
 rest.delete(rest.size);
 
 console.log(rest.get(arr));
+const amci = 1;
+c;
