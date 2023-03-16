@@ -65,12 +65,130 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // LECTURES
 
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+/////////////////////////////////////////////////
+
+// let arr = ['a', 'b', 'c', 'd', 'e'];
+
+//slice
+/*
+console.log(arr.slice(2));
+console.log(arr.slice(2, 4)); //start parametar and end parametar
+console.log(arr.slice(-2)); //uzima poslednja dva
+console.log(arr.slice(1, -1)); //uzima od prvog do predpsolendjeg tj. poslednjeg ne
+console.log(arr.slice());
+console.log([...arr] + 1); //string
+
+//splice
+
+// Metoda "splice" u JavaScriptu se koristi za mijenjanje sadržaja polja (engl. array) ili brisanje elemenata iz polja.
+
+//Metoda uzima tri argumenta:
+
+// Index - početni indeks iz kojeg će početi mijenjanje polja
+// Count - broj elemenata koji će se izbrisati iz polja počevši od indexa
+// Items - elementi koji će se dodati u polje počevši od indexa
+
+// Primjer korištenja metode "splice" za dodavanje elemenata u polje:
+let fruits1 = ['apple', 'banana', 'orange'];
+fruits1.splice(1, 0, 'grape', 'peach'); // Dodavanje elemenata na index 1, bez brisanja elemenata
+console.log(fruits1); // ['apple', 'grape', 'peach', 'banana', 'orange']
+
+// Primjer korištenja metode "splice" za brisanje elemenata iz polja:
+let fruits2 = ['apple', 'banana', 'orange'];
+fruits2.splice(1, 1); // Brisanje jednog elementa na indexu 1
+console.log(fruits2); // ['apple', 'orange']
+
+//CONCAT
+//spajanje dva arraya
+arr = ['a', 'b', 'c', 'd', 'e'];
+const arr2 = ['j', 'e', 'i', 'h', 'g', 'f'];
+const letters = arr.concat(arr2);
+console.log(letters);
+console.log([...arr, ...arr2]);
+
+// JOIN
+console.log(letters.join(' - '));
+
+//nova att metoda
+//dodana u ES2022
+//radi i na stringovima
+
+const arr3 = [22, 11, 64];
+console.log(arr3[0]);
+console.log(arr3.at(0));
+//ovo je isto samo sto menja kockaste zagrade
+
+//getting the last element
+console.log(arr[arr.length - 1]);
+console.log(arr.slice(-1)[0]);
+console.log(arr.at(-1));
+
+console.log('jonas'.at(0)); //vraca j
+
+// FOR EACH
+// Metoda forEach u JavaScriptu se koristi za prolazak kroz elemente niza i izvođenje neke funkcije za svaki element.
+//  Argumenti koji se koriste u forEach petlji su:
+// element (obavezno): 
+// Predstavlja trenutni element u nizu. 
+// Ovaj argument je obavezan i mora biti naveden u funkciji koju koristite za svaki element.
+
+// index (opcionalno): 
+// Predstavlja indeks trenutnog elementa u nizu. 
+// Ovaj argument je opcionalan i može se koristiti ako je potrebno pristupiti indeksu elementa u funkciji koju koristite za svaki element.
+
+// array (opcionalno): 
+// Predstavlja sam niz koji se prolazi kroz forEach petlju. 
+// Ovaj argument je opcionalan i može se koristiti ako je potrebno pristupiti nizu u funkciji koju koristite za svaki element.
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+for (const movement of movements) {
+  if (movement > 0) {
+    console.log(`You deposited ${movement}`);
+  } else {
+    console.log(`You withdraw ${Math.abs(movement)}`); //uzima absolute value bez minusa
+  }
+}
+console.log('-------------------');
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}. You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}. You withdraw ${Math.abs(movement)}`); //uzima absolute value bez minusa
+  }
+}
+
+console.log('---------FOREACH---------'); //movement, index, ceo arr
+movements.forEach(function (movement, i, arr) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}. You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}. You withdraw ${Math.abs(movement)}`); //uzima absolute value bez minusa
+  }
+});
+// 0: function(200)
+// 1: function(450)
+// 2: function(400)
+//poziva funkciju za svaki element u nizu
+//i proverava da li je pozitivan ili ne
+*/
+// forEach with Maps and Set
+
 const currencies = new Map([
   ['USD', 'United States dollar'],
   ['EUR', 'Euro'],
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
 
-/////////////////////////////////////////////////
+//SET
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique);
+currenciesUnique.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
