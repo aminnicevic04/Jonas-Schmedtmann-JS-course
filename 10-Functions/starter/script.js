@@ -360,7 +360,7 @@ GOOD LUCK �
   const header = document.querySelector('h1');
   header.style.color = 'red';
 })();
-// objasnjenje ->
+// objasnjenje -->
 // e ovako ovo je iife funkcija ili imidietly invoked function expression, nju ne moramo pozvati,
 // jer sami njen nacin pisanja nju poziva i ona nema ime. Ona kada se sama pozove zapamti se u memoriji
 // i nakon izvrsavanja te radnje ona se brise iz memorije i nikada se opet ne poziva...
